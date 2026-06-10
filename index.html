@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>語言治療資訊站 ｜ 認識語言發展、評估與療育</title>
+<meta name="description" content="整理語言治療相關資訊：語言發展里程碑、什麼時候該做語言治療評估、構音問題、在家陪孩子練習說話，以及成人語言與吞嚥治療。提供家長與照顧者參考。">
+<meta name="author" content="語言治療資訊站">
+<meta property="og:title" content="語言治療資訊站">
+<meta property="og:description" content="認識語言發展、評估時機與療育方式的家長友善資訊。">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#f7f9fb;
+    --surface:#ffffff;
+    --ink:#22303a;
+    --muted:#5b6b76;
+    --brand:#2f8f9d;
+    --brand-dark:#1f6b77;
+    --accent:#f4a259;
+    --line:#e3e9ed;
+    --shadow:0 6px 24px rgba(31,107,119,.08);
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand-dark);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header.site{
+    background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+    color:#fff;
+    position:sticky;top:0;z-index:50;
+    box-shadow:0 2px 12px rgba(0,0,0,.12);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;color:#fff;}
+  .logo .dot{width:30px;height:30px;border-radius:9px;background:var(--accent);display:grid;place-items:center;font-size:1rem;}
+  .nav-links{display:flex;gap:22px;}
+  .nav-links a{color:#eafafc;font-size:.95rem;font-weight:500;}
+  .nav-links a:hover{color:#fff;text-decoration:none;opacity:.85;}
+  .menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer;}
+
+  /* Hero */
+  .hero{padding:64px 0 48px;text-align:center;}
+  .hero h1{font-size:2.2rem;margin:0 0 14px;line-height:1.3;}
+  .hero p{font-size:1.1rem;color:var(--muted);max-width:660px;margin:0 auto 26px;}
+  .hero .cta{display:inline-block;background:var(--accent);color:#3a2b14;font-weight:700;padding:12px 26px;border-radius:999px;box-shadow:var(--shadow);}
+  .hero .cta:hover{text-decoration:none;transform:translateY(-1px);}
+
+  /* Section heading */
+  .sec-head{text-align:center;margin:50px 0 28px;}
+  .sec-head h2{font-size:1.6rem;margin:0 0 8px;}
+  .sec-head p{color:var(--muted);margin:0;}
+
+  /* Article cards */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;cursor:pointer;display:flex;flex-direction:column;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .card .thumb{height:96px;display:grid;place-items:center;font-size:2.4rem;}
+  .card .body{padding:18px 20px 22px;flex:1;display:flex;flex-direction:column;}
+  .tag{display:inline-block;align-self:flex-start;font-size:.75rem;font-weight:700;color:var(--brand-dark);background:#e6f4f6;padding:3px 10px;border-radius:999px;margin-bottom:10px;}
+  .card h3{margin:0 0 8px;font-size:1.12rem;line-height:1.45;}
+  .card p{margin:0;color:var(--muted);font-size:.93rem;}
+  .card .more{margin-top:14px;color:var(--brand-dark);font-weight:700;font-size:.9rem;}
+
+  /* Resource cards */
+  .res-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .res-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;transition:transform .18s ease,box-shadow .18s ease;}
+  .res-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+  .res-card h3{margin:0 0 6px;font-size:1.08rem;}
+  .res-card p{margin:0 0 14px;color:var(--muted);font-size:.92rem;}
+  .res-card a.src{display:inline-flex;align-items:center;gap:5px;font-weight:700;color:var(--brand-dark);font-size:.92rem;}
+  @media(max-width:600px){.res-grid{grid-template-columns:1fr;}}
+
+  /* Article reader */
+  .reader{display:none;padding:40px 0 20px;}
+  .reader.active{display:block;animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  .back{display:inline-flex;align-items:center;gap:6px;background:none;border:0;color:var(--brand-dark);font-weight:700;cursor:pointer;font-size:.95rem;margin-bottom:18px;padding:0;}
+  .article-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:40px;}
+  .article-card .tag{font-size:.8rem;}
+  .article-card h1{font-size:1.9rem;line-height:1.35;margin:6px 0 18px;}
+  .article-card h2{font-size:1.3rem;margin:30px 0 10px;color:var(--brand-dark);}
+  .article-card h3{font-size:1.08rem;margin:22px 0 6px;}
+  .article-card p{margin:0 0 14px;}
+  .article-card ul{margin:0 0 16px;padding-left:22px;}
+  .article-card li{margin-bottom:6px;}
+  .callout{background:#fff7ed;border-left:4px solid var(--accent);border-radius:8px;padding:14px 18px;margin:18px 0;color:#5c4a30;}
+  .milestone{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem;}
+  .milestone th,.milestone td{border:1px solid var(--line);padding:10px 12px;text-align:left;}
+  .milestone th{background:#e6f4f6;color:var(--brand-dark);}
+  .milestone tr:nth-child(even) td{background:#fafcfd;}
+  .refs{margin-top:34px;padding:20px 22px;background:#f4f8f9;border:1px solid var(--line);border-radius:12px;}
+  .refs h2{margin:0 0 10px;font-size:1.1rem;color:var(--brand-dark);}
+  .refs ul{margin:0;padding-left:20px;}
+  .refs li{margin-bottom:8px;font-size:.92rem;color:var(--muted);}
+  .refs a{font-weight:600;word-break:break-all;}
+  .refs .note{margin:12px 0 0;font-size:.82rem;color:#8a99a1;}
+
+  /* Category group */
+  .cat-group{margin-bottom:40px;}
+  .cat-title{display:flex;align-items:center;gap:12px;margin:0 0 18px;padding-bottom:10px;border-bottom:2px solid var(--line);}
+  .cat-title .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:1.2rem;flex:none;}
+  .cat-title h3{margin:0;font-size:1.3rem;}
+  .cat-title span.desc{font-size:.88rem;color:var(--muted);font-weight:400;margin-left:2px;}
+
+  /* Home view wrapper toggle */
+  .home.hidden{display:none;}
+
+  /* Footer */
+  footer.site{background:#1f2a30;color:#c4d2d8;margin-top:60px;padding:36px 0;}
+  footer.site .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:flex-start;}
+  footer .disclaimer{font-size:.85rem;color:#93a4ac;max-width:560px;}
+  footer h4{color:#fff;margin:0 0 8px;font-size:1rem;}
+  footer a{color:#9fe3ec;}
+
+  @media(max-width:860px){
+    .grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:600px){
+    .grid{grid-template-columns:1fr;}
+    .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--brand-dark);flex-direction:column;padding:12px 20px;gap:0;}
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);}
+    .menu-btn{display:block;}
+    .hero h1{font-size:1.7rem;}
+    .article-card{padding:24px 20px;}
+    .article-card h1{font-size:1.5rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#top" onclick="goHome()"><span class="dot">語</span>語言治療資訊站</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#articles" onclick="goHome()">文章總覽</a>
+      <a href="#resources" onclick="goHome()">參考資源</a>
+      <a href="#about" onclick="goHome()">關於本站</a>
+    </nav>
+    <button class="menu-btn" aria-label="選單" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- HOME VIEW -->
+<main class="home" id="home">
+  <section class="hero wrap">
+    <h1>認識語言治療，陪孩子好好說話</h1>
+    <p>整理語言發展、評估時機與療育方式的家長友善資訊。如果你正在擔心孩子的語言發展，或想了解語言治療能幫上什麼忙，這裡是一個好的起點。</p>
+    <a class="cta" href="#articles">開始閱讀文章 ↓</a>
+  </section>
+
+  <section class="wrap" id="articles">
+    <div class="sec-head">
+      <h2>文章總覽</h2>
+      <p>依主題分類，點選任一篇文章閱讀完整內容</p>
+    </div>
+    <div id="cardGroups"><!-- category groups injected by JS --></div>
+  </section>
+
+  <section class="wrap" id="resources">
+    <div class="sec-head">
+      <h2>參考資源</h2>
+      <p>政府機關與專業學會的官方資訊，可進一步查詢</p>
+    </div>
+    <div class="res-grid">
+      <div class="res-card">
+        <h3>衛生福利部：發展遲緩兒童早期療育</h3>
+        <p>說明早期療育的意義、服務流程與政府推動的相關措施。</p>
+        <a class="src" href="https://www.mohw.gov.tw/cp-88-238-1.html" target="_blank" rel="noopener">前往資料來源 ↗</a>
+      </div>
+      <div class="res-card">
+        <h3>社家署：發展遲緩兒童通報暨個案管理服務網</h3>
+        <p>包含通報轉介中心、聯合評估中心與各縣市早療資源入口。</p>
+        <a class="src" href="https://system.sfaa.gov.tw/cecm/resourceView/detail2?qtype1=1&qtype2=4" target="_blank" rel="noopener">前往資料來源 ↗</a>
+      </div>
+      <div class="res-card">
+        <h3>國民健康署：兒童發展篩檢服務</h3>
+        <p>未滿 7 歲兒童發展篩檢服務說明，涵蓋語言、認知等四大面向。</p>
+        <a class="src" href="https://www.hpa.gov.tw/4816/s" target="_blank" rel="noopener">前往資料來源 ↗</a>
+      </div>
+      <div class="res-card">
+        <h3>國民健康署：兒童健康手冊</h3>
+        <p>內含「兒童發展連續圖」，家長可在家對照孩子的發展進度。</p>
+        <a class="src" href="https://www.hpa.gov.tw/Pages/EBook.aspx?nodeid=1139" target="_blank" rel="noopener">前往資料來源 ↗</a>
+      </div>
+      <div class="res-card">
+        <h3>台灣聽力語言學會</h3>
+        <p>語言治療與聽力專業學會，提供衛教資訊與專業人員相關資源。</p>
+        <a class="src" href="https://www.slh.org.tw/" target="_blank" rel="noopener">前往資料來源 ↗</a>
+      </div>
+      <div class="res-card">
+        <h3>中華民國語言治療師公會全國聯合會</h3>
+        <p>全國語言治療師公會聯合組織，可查詢專業制度與相關資訊。</p>
+        <a class="src" href="https://www.taiwanslpu.org.tw/" target="_blank" rel="noopener">前往資料來源 ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="about">
+    <div class="sec-head">
+      <h2>關於本站</h2>
+      <p>為什麼做這個網站</p>
+    </div>
+    <div class="article-card" style="max-width:760px;margin:0 auto;">
+      <p>許多家長在孩子語言發展的路上會有許多疑問：「他是不是說話比較慢？」「需要看醫生嗎？」「語言治療到底在做什麼？」這個網站希望用好懂的方式，整理常見的語言治療相關知識，幫助家長與照顧者在需要時更有方向。</p>
+
+      <h3 style="margin-top:24px;">關於站長</h3>
+      <p>本站由<strong>語言治療相關科系在學中</strong>的學生整理經營。因為對語言治療領域的關注，希望把查找、學習過程中接觸到的衛教知識，用白話的方式整理分享給有需要的家長與照顧者。</p>
+
+      <h3 style="margin-top:20px;">本站如何整理資訊</h3>
+      <p>站內文章主要彙整自<strong>衛生福利部、國民健康署、台灣聽力語言學會、語言治療師公會</strong>等官方與專業來源，並在每篇文末附上出處供查證。本站內容屬於衛教整理與分享，<strong>並非醫療專業意見或診斷</strong>。</p>
+
+      <div class="callout">本站內容僅供教育與參考用途，無法取代專業評估。若對孩子或家人的發展、溝通與吞嚥狀況有疑慮，請諮詢小兒科醫師、復健科醫師或語言治療師，進行個別化的評估。</div>
+    </div>
+  </section>
+</main>
+
+<!-- READER VIEW -->
+<section class="reader wrap" id="reader">
+  <button class="back" onclick="goHome()">← 回文章總覽</button>
+  <div class="article-card" id="articleBody"></div>
+  <button class="back" style="margin-top:24px;" onclick="goHome()">← 回文章總覽</button>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="disclaimer">
+      <h4>語言治療資訊站</h4>
+      <p>本網站提供之資訊僅供一般教育參考，不構成醫療診斷或治療建議，亦無法取代語言治療師、醫師之專業評估。如有疑慮，請尋求合格專業人員協助。</p>
+    </div>
+    <div>
+      <h4>需要協助？</h4>
+      <p style="font-size:.9rem;">可洽詢：各醫院復健科、兒童發展聯合評估中心、各縣市早期療育通報轉介中心，或合格之語言治療所。</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const articles = [
+  {
+    cat:"child", icon:"🗓️", color:"#e6f4f6", tag:"評估時機",
+    title:"什麼時候該帶孩子做語言治療評估？",
+    excerpt:"哪些情況代表該尋求專業評估？掌握幾個關鍵警訊與年齡指標。",
+    html:`
+      <span class="tag">評估時機</span>
+      <h1>什麼時候該帶孩子做語言治療評估？</h1>
+      <p>許多家長會猶豫：「再等等看好不好？」其實，語言發展有一定的時間範圍，當孩子明顯落後同齡時，及早評估能釐清原因，也能把握療育的黃金期。以下是一些值得留意的警訊。</p>
+
+      <h2>不同年齡的提醒指標</h2>
+      <ul>
+        <li><strong>12 個月：</strong>沒有任何手勢（如揮手、指物），或對叫名字幾乎沒有反應。</li>
+        <li><strong>18 個月：</strong>還沒有出現有意義的單字，或比較喜歡用手勢而非聲音表達。</li>
+        <li><strong>2 歲：</strong>會說的詞彙少於約 50 個，或還不會把兩個詞合在一起（如「喝水水」「媽媽抱」）。</li>
+        <li><strong>2–3 歲：</strong>家人以外的人幾乎聽不懂孩子在說什麼。</li>
+        <li><strong>任何年齡：</strong>原本會說的話卻退步、消失（語言能力退化），這需要儘快就醫評估。</li>
+      </ul>
+
+      <div class="callout">每個孩子的發展速度不同，上述是「提醒」而非絕對標準。若同時出現多項，或你心裡一直放不下這份擔心，提早諮詢通常不會錯。</div>
+
+      <h2>除了「會說幾個字」還要看什麼？</h2>
+      <p>語言不只是「開口說話」。專業人員也會觀察孩子的<strong>理解能力</strong>（聽得懂指令嗎？）、<strong>溝通意圖</strong>（會不會主動表達需求、分享）、<strong>眼神與互動</strong>，以及<strong>口腔動作與進食</strong>狀況。這些線索有助於判斷問題的本質。</p>
+
+      <h2>該找誰評估？</h2>
+      <p>可以從小兒科或復健科醫師開始，醫師會視情況安排聽力檢查、發展評估，或轉介語言治療師。許多縣市也設有「兒童發展聯合評估中心」與「早期療育通報轉介中心」，能提供整合性的服務。</p>
+
+      <h3>提早評估的好處</h3>
+      <p>越早了解狀況，越能在孩子大腦與語言發展最有彈性的階段提供協助。即使評估後發現「只是慢一點」，也能讓家長安心，並得到在家陪伴的具體方向。</p>
+
+      <div class="refs">
+        <h2>參考資料與延伸閱讀</h2>
+        <ul>
+          <li>衛生福利部國民健康署：兒童發展篩檢服務 — <a href="https://www.hpa.gov.tw/4816/s" target="_blank" rel="noopener">hpa.gov.tw/4816/s</a></li>
+          <li>衛生福利部社會及家庭署：發展遲緩兒童通報暨個案管理服務網 — <a href="https://system.sfaa.gov.tw/cecm/resourceView/detail2?qtype1=1&qtype2=4" target="_blank" rel="noopener">通報轉介與聯合評估資源</a></li>
+          <li>衛生福利部：發展遲緩兒童早期療育 — <a href="https://www.mohw.gov.tw/cp-88-238-1.html" target="_blank" rel="noopener">mohw.gov.tw</a></li>
+        </ul>
+        <p class="note">本文為衛教整理，供家長參考，無法取代專業評估。如有疑慮請諮詢醫師或語言治療師。</p>
+      </div>
+    `
+  },
+  {
+    cat:"child", icon:"📈", color:"#fef3e7", tag:"發展里程碑",
+    title:"孩子有語言發展遲緩嗎？認識語言發展里程碑",
+    excerpt:"用一張表快速對照孩子各年齡的語言發展，了解什麼是發展遲緩。",
+    html:`
+      <span class="tag">發展里程碑</span>
+      <h1>孩子有語言發展遲緩嗎？認識語言發展里程碑</h1>
+      <p>「語言發展遲緩」指的是孩子的語言能力明顯落後於同年齡的多數孩子。要判斷孩子是否落後，先了解一般的發展里程碑會很有幫助。以下表格提供大致的參考。</p>
+
+      <table class="milestone">
+        <thead><tr><th>年齡</th><th>大致的語言表現</th></tr></thead>
+        <tbody>
+          <tr><td>6 個月</td><td>會發出咿咿呀呀的聲音、對聲音有反應、會用聲音表達情緒。</td></tr>
+          <tr><td>12 個月</td><td>會叫「爸爸」「媽媽」、會用手勢（揮手、指東西）、聽得懂簡單的字。</td></tr>
+          <tr><td>18 個月</td><td>會說約 10–20 個單字、能聽懂簡單指令。</td></tr>
+          <tr><td>2 歲</td><td>詞彙約 50 個以上、會把兩個詞組合（「要餅乾」）、聽得懂日常問句。</td></tr>
+          <tr><td>3 歲</td><td>會說簡短句子、家人大多聽得懂、會問「為什麼」。</td></tr>
+          <tr><td>4 歲</td><td>能說較完整的句子、陌生人也大致聽得懂、會講簡單故事。</td></tr>
+          <tr><td>5 歲</td><td>語法接近成人、能清楚表達想法、發音大致清楚。</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">這些是「平均」參考值，並非每個孩子都得完全符合。重點在於「整體趨勢」是否持續進步，而不是某一項是否準時達成。</div>
+
+      <h2>遲緩，不一定等於某個診斷</h2>
+      <p>語言發展遲緩本身是一種「現象描述」，背後可能有不同原因：例如聽力問題、口腔動作、整體發展、環境刺激不足，或暫時性的個別差異。專業評估的目的，就是釐清原因並找到合適的協助方式。</p>
+
+      <h2>家長可以先做的觀察</h2>
+      <ul>
+        <li>記錄孩子目前會說的詞彙與句子長度。</li>
+        <li>觀察孩子「聽得懂多少」，而不只是「說得出多少」。</li>
+        <li>留意孩子是否願意用各種方式（眼神、手勢、聲音）主動溝通。</li>
+        <li>確認聽力是否曾經檢查過。</li>
+      </ul>
+      <p>把這些觀察帶到評估現場，能讓專業人員更快掌握孩子的狀況。</p>
+
+      <div class="refs">
+        <h2>參考資料與延伸閱讀</h2>
+        <ul>
+          <li>衛生福利部國民健康署：兒童健康手冊（內含「兒童發展連續圖」） — <a href="https://www.hpa.gov.tw/Pages/EBook.aspx?nodeid=1139" target="_blank" rel="noopener">hpa.gov.tw 兒童健康手冊</a></li>
+          <li>衛生福利部國民健康署：兒童發展篩檢服務 — <a href="https://www.hpa.gov.tw/4816/s" target="_blank" rel="noopener">hpa.gov.tw/4816/s</a></li>
+          <li>衛生福利部：發展遲緩兒童早期療育 — <a href="https://www.mohw.gov.tw/cp-88-238-1.html" target="_blank" rel="noopener">mohw.gov.tw</a></li>
+        </ul>
+        <p class="note">表格為一般發展平均參考值，每個孩子發展速度不同，僅供對照觀察使用。</p>
+      </div>
+    `
+  },
+  {
+    cat:"child", icon:"🧩", color:"#e8f0fe", tag:"認識療育",
+    title:"語言治療到底在做什麼？",
+    excerpt:"不是只有「教說話」。了解語言治療師如何透過遊戲與互動幫助孩子。",
+    html:`
+      <span class="tag">認識療育</span>
+      <h1>語言治療到底在做什麼？</h1>
+      <p>很多人以為語言治療就是「老師教孩子唸字、糾正發音」。事實上，語言治療的範圍更廣，方式也常常是透過<strong>遊戲與自然互動</strong>進行，尤其對年幼的孩子而言。</p>
+
+      <h2>語言治療師關注的面向</h2>
+      <ul>
+        <li><strong>理解（接收性語言）：</strong>聽懂詞彙、指令與問題的能力。</li>
+        <li><strong>表達（表達性語言）：</strong>用詞彙、句子表達想法與需求。</li>
+        <li><strong>語音／構音：</strong>把音發清楚，讓別人聽得懂。</li>
+        <li><strong>社交溝通：</strong>輪流、眼神接觸、看情境說話。</li>
+        <li><strong>流暢度：</strong>例如口吃的處理。</li>
+        <li><strong>口腔動作與吞嚥：</strong>進食、咀嚼、吞嚥的安全與協調。</li>
+      </ul>
+
+      <h2>一次療程大概長什麼樣子？</h2>
+      <p>治療師會先設定目標，再用適合孩子的活動來達成——可能是扮家家酒、玩玩具、看繪本、唱歌或桌遊。對孩子來說像在玩，但每個活動其實都有設計過的語言目標。治療師也會示範如何引導，讓家長能把方法帶回家。</p>
+
+      <div class="callout">家長的參與非常關鍵。孩子每週和治療師相處的時間有限，真正的進步往往發生在日常生活的大量練習裡。</div>
+
+      <h2>療育不是「越多越好」，而是「合適最好」</h2>
+      <p>治療頻率與內容會依孩子的需求調整。治療師會定期檢視目標、評估進展，並與家長討論下一步。良好的合作關係，是療育順利的重要基礎。</p>
+
+      <div class="refs">
+        <h2>參考資料與延伸閱讀</h2>
+        <ul>
+          <li>台灣聽力語言學會 — <a href="https://www.slh.org.tw/" target="_blank" rel="noopener">slh.org.tw</a></li>
+          <li>中華民國語言治療師公會全國聯合會 — <a href="https://www.taiwanslpu.org.tw/" target="_blank" rel="noopener">taiwanslpu.org.tw</a></li>
+          <li>衛生福利部：發展遲緩兒童早期療育 — <a href="https://www.mohw.gov.tw/cp-88-238-1.html" target="_blank" rel="noopener">mohw.gov.tw</a></li>
+        </ul>
+        <p class="note">實際療育方式會依個別孩子的需求與治療師評估而調整。</p>
+      </div>
+    `
+  },
+  {
+    cat:"child", icon:"🔤", color:"#fce8ef", tag:"構音／發音",
+    title:"孩子咬字不清、發音怪怪的，怎麼辦？",
+    excerpt:"認識構音／語音異常，了解哪些發音問題會隨年齡改善、哪些需要介入。",
+    html:`
+      <span class="tag">構音／發音</span>
+      <h1>孩子咬字不清、發音怪怪的，怎麼辦？</h1>
+      <p>「ㄍㄜ ㄍㄜ」說成「ㄉㄜ ㄉㄜ」、「ㄕ」發不出來、講話像含滷蛋……這些都是常見的<strong>構音（語音）問題</strong>。有些會隨著年齡自然改善，有些則需要專業協助。</p>
+
+      <h2>發音是慢慢成熟的</h2>
+      <p>不同的音有不同的「成熟時間」。母音和較簡單的子音通常較早出現，而像「ㄗ、ㄘ、ㄙ」或捲舌音「ㄓ、ㄔ、ㄕ、ㄖ」往往較晚才發得標準。因此，三歲的孩子有些音不清楚，未必代表異常。</p>
+
+      <h2>什麼情況比較需要留意？</h2>
+      <ul>
+        <li>到了 4 歲，家人以外的人仍常聽不懂孩子說話。</li>
+        <li>發音的「錯法」很特別，不像一般同齡孩子會犯的錯。</li>
+        <li>說話時看起來很費力，或孩子因為說不清楚而沮喪、不想開口。</li>
+        <li>伴隨流口水、進食困難等口腔動作問題。</li>
+      </ul>
+
+      <div class="callout">糾正發音時，避免一直要求孩子「再說一次、說對為止」。過度糾正可能讓孩子壓力大、更不願意說話。可以用「正確示範」代替「指責」。</div>
+
+      <h2>家長可以怎麼做？</h2>
+      <p>當孩子說錯時，不必要求重說，而是<strong>自然地把正確的說法再講一遍</strong>。例如孩子說「我要喝水水（ㄉㄨㄟ ㄉㄨㄟ）」，你可以回：「喔～你要喝水（清楚示範）呀！」讓孩子在輕鬆的氣氛中多聽到正確的發音。若問題持續，語言治療師能提供針對特定音的系統化訓練。</p>
+
+      <div class="refs">
+        <h2>參考資料與延伸閱讀</h2>
+        <ul>
+          <li>台灣聽力語言學會 — <a href="https://www.slh.org.tw/" target="_blank" rel="noopener">slh.org.tw</a></li>
+          <li>中華民國語言治療師公會全國聯合會 — <a href="https://www.taiwanslpu.org.tw/" target="_blank" rel="noopener">taiwanslpu.org.tw</a></li>
+          <li>衛生福利部國民健康署：兒童發展篩檢服務 — <a href="https://www.hpa.gov.tw/4816/s" target="_blank" rel="noopener">hpa.gov.tw/4816/s</a></li>
+        </ul>
+        <p class="note">不同語音的發展成熟時間不同，若不確定孩子的發音是否需要介入，建議諮詢語言治療師。</p>
+      </div>
+    `
+  },
+  {
+    cat:"child", icon:"🏠", color:"#e7f6ec", tag:"在家陪伴",
+    title:"在家可以怎麼陪孩子練習說話？",
+    excerpt:"不需要特別教材，把語言刺激融入日常生活的實用技巧。",
+    html:`
+      <span class="tag">在家陪伴</span>
+      <h1>在家可以怎麼陪孩子練習說話？</h1>
+      <p>促進語言發展，最有效的場域其實是<strong>日常生活</strong>。不需要昂貴教材或正式課程，幾個小技巧就能讓每天的互動變成豐富的語言刺激。</p>
+
+      <h2>實用的日常技巧</h2>
+      <ul>
+        <li><strong>跟著孩子的興趣走：</strong>他在玩什麼，就聊什麼。孩子有興趣時最願意溝通。</li>
+        <li><strong>多描述、少考試：</strong>與其一直問「這是什麼？」，不如多描述眼前發生的事：「你把積木疊高高了！」</li>
+        <li><strong>擴展孩子的話：</strong>孩子說「車車」，你可以回「對，紅色的車車跑得好快」。</li>
+        <li><strong>製造「需要表達」的機會：</strong>把愛玩的東西放在看得到、拿不到的地方，鼓勵他主動表達。</li>
+        <li><strong>多共讀繪本：</strong>不必逐字唸，可以邊看圖邊聊，重複是孩子學習的好朋友。</li>
+        <li><strong>唱歌與兒歌：</strong>有韻律、可預期的歌詞，很適合語言學習。</li>
+      </ul>
+
+      <div class="callout">減少 3C 螢幕時間。對幼兒而言，真人之間「來來回回」的互動，遠比被動看影片更能促進語言發展。</div>
+
+      <h2>放慢、等待、給機會</h2>
+      <p>大人常常太快幫孩子把話講完。試著說完話後<strong>停頓幾秒、帶著期待的眼神等待</strong>，給孩子時間組織與回應。這個小小的「等待」，常常能換來孩子更多的表達。</p>
+
+      <h3>記得保持愉快</h3>
+      <p>語言練習的核心是「享受互動」。當孩子覺得溝通是開心、有回應的事，他自然會更想說。把這些技巧當成陪玩的一部分，而不是功課。</p>
+
+      <div class="refs">
+        <h2>參考資料與延伸閱讀</h2>
+        <ul>
+          <li>衛生福利部國民健康署：兒童健康手冊（兒童發展連續圖） — <a href="https://www.hpa.gov.tw/Pages/EBook.aspx?nodeid=1139" target="_blank" rel="noopener">hpa.gov.tw 兒童健康手冊</a></li>
+          <li>台灣聽力語言學會 — <a href="https://www.slh.org.tw/" target="_blank" rel="noopener">slh.org.tw</a></li>
+          <li>衛生福利部：發展遲緩兒童早期療育 — <a href="https://www.mohw.gov.tw/cp-88-238-1.html" target="_blank" rel="noopener">mohw.gov.tw</a></li>
+        </ul>
+        <p class="note">以上為一般陪伴原則，若孩子語言發展明顯落後，仍建議尋求專業評估。</p>
+      </div>
+    `
+  },
+  {
+    cat:"adult", icon:"🧑‍⚕️", color:"#eef0f3", tag:"成人語言治療",
+    title:"成人也需要語言治療嗎？中風、吞嚥與溝通",
+    excerpt:"語言治療不只服務孩子。中風後失語、吞嚥困難等也是重要的服務範圍。",
+    html:`
+      <span class="tag">成人語言治療</span>
+      <h1>成人也需要語言治療嗎？中風、吞嚥與溝通</h1>
+      <p>語言治療常被認為是「兒童專屬」，但其實<strong>成人與長者</strong>同樣是重要的服務對象。腦中風、腦傷、退化性疾病等都可能影響溝通與吞嚥能力。</p>
+
+      <h2>常見的成人服務範圍</h2>
+      <ul>
+        <li><strong>失語症（Aphasia）：</strong>中風或腦傷後，理解或表達語言出現困難。</li>
+        <li><strong>言語失用／構音障礙：</strong>大腦或肌肉控制問題，導致說話不清楚。</li>
+        <li><strong>吞嚥障礙（Dysphagia）：</strong>進食或喝水時容易嗆咳、吞嚥不安全，需要評估與訓練。</li>
+        <li><strong>認知溝通問題：</strong>注意力、記憶、組織能力影響日常溝通。</li>
+        <li><strong>嗓音問題：</strong>聲音沙啞、用聲過度等。</li>
+      </ul>
+
+      <div class="callout">吞嚥困難不只是「比較難吞」而已——它可能造成嗆咳、吸入性肺炎等風險。若家中長輩進食時常嗆到，建議尋求專業評估。</div>
+
+      <h2>復健需要時間與耐心</h2>
+      <p>成人的語言與吞嚥復健，往往是一段需要耐心的歷程。語言治療師會依個別狀況設定目標，並與家屬合作，協助患者盡可能恢復或代償功能、提升生活品質與溝通信心。</p>
+
+      <h2>家屬可以扮演的角色</h2>
+      <p>給患者充分的時間表達、不急著替他說完、營造輕鬆不被催促的溝通環境，都對復健很有幫助。治療師也會教導家屬合適的溝通與餵食技巧。</p>
+
+      <div class="refs">
+        <h2>參考資料與延伸閱讀</h2>
+        <ul>
+          <li>台灣聽力語言學會 — <a href="https://www.slh.org.tw/" target="_blank" rel="noopener">slh.org.tw</a></li>
+          <li>中華民國語言治療師公會全國聯合會 — <a href="https://www.taiwanslpu.org.tw/" target="_blank" rel="noopener">taiwanslpu.org.tw</a></li>
+        </ul>
+        <p class="note">吞嚥困難可能伴隨嗆咳與吸入性肺炎風險，若家中長輩進食常嗆到，請儘速尋求專業評估。</p>
+      </div>
+    `
+  },
+  {
+    cat:"adult", icon:"💪", color:"#e7f1fb", tag:"中風復健",
+    title:"中風後在家復健陪伴：家屬可以做什麼？",
+    excerpt:"出院後回到家，家屬如何延續復健、營造好的溝通環境，並照顧好自己。",
+    html:`
+      <span class="tag">中風復健</span>
+      <h1>中風後在家復健陪伴：家屬可以做什麼？</h1>
+      <p>中風後的復健不只發生在醫院或治療室，<strong>回到家中的每一天</strong>同樣關鍵。家屬的陪伴方式，會直接影響患者恢復的信心與生活品質。以下整理幾個在家可以實踐的方向。</p>
+
+      <h2>把復健融入日常，而非另外「上課」</h2>
+      <p>治療師交代的練習，最好自然地放進生活裡。例如練習說話可以結合日常對話、看老照片聊回憶；練習手部動作可以結合扣鈕扣、拿杯子。讓復健成為生活的一部分，患者比較不會排斥，也練得更頻繁。</p>
+
+      <h2>溝通時的陪伴技巧</h2>
+      <ul>
+        <li><strong>給足夠的時間：</strong>失語症患者常常「知道想說什麼，但話卡住」。請耐心等待，不要急著替他把話講完。</li>
+        <li><strong>用簡單、清楚的句子：</strong>一次講一個重點，必要時搭配手勢、圖片或寫字輔助。</li>
+        <li><strong>把他當成大人：</strong>避免用對待小孩的語氣。尊重，是維持自尊與動機的關鍵。</li>
+        <li><strong>製造成功經驗：</strong>從他做得到的事開始，多一點鼓勵，少一點糾正。</li>
+      </ul>
+
+      <div class="callout">復健是一段長路，進步常常是緩慢且起伏的。把焦點放在「比上週進步一點」，而不是「還沒恢復到從前」，對患者和家屬都更健康。</div>
+
+      <h2>別忘了照顧自己</h2>
+      <p>照顧者的身心壓力很大，容易過度疲累甚至忽略自己的健康。適時尋求喘息服務、家人輪替、或加入照顧者支持團體，都不是「偷懶」，而是讓陪伴能走得更久的必要。</p>
+
+      <h2>與專業團隊保持聯繫</h2>
+      <p>在家遇到狀況（例如吞嚥變差、情緒低落、練習卡關）時，記得回診或聯繫語言治療師、物理／職能治療師。專業團隊能依患者恢復狀況調整目標與方法。</p>
+
+      <div class="refs">
+        <h2>參考資料與延伸閱讀</h2>
+        <ul>
+          <li>台灣聽力語言學會 — <a href="https://www.slh.org.tw/" target="_blank" rel="noopener">slh.org.tw</a></li>
+          <li>中華民國語言治療師公會全國聯合會 — <a href="https://www.taiwanslpu.org.tw/" target="_blank" rel="noopener">taiwanslpu.org.tw</a></li>
+        </ul>
+        <p class="note">本文為一般照顧原則，個別患者的復健計畫請依醫療團隊評估為準。</p>
+      </div>
+    `
+  },
+  {
+    cat:"adult", icon:"🍲", color:"#fdf0e6", tag:"吞嚥飲食",
+    title:"長輩吞嚥困難的飲食準備",
+    excerpt:"認識吞嚥困難的警訊，學會調整食物質地，讓長輩吃得安全又有尊嚴。",
+    html:`
+      <span class="tag">吞嚥飲食</span>
+      <h1>長輩吞嚥困難的飲食準備</h1>
+      <p>隨著年齡或疾病（如中風、失智、巴金森氏症），長輩可能出現<strong>吞嚥困難</strong>。準備合適質地的飲食，能降低嗆咳與吸入性肺炎的風險，也讓用餐重新成為享受。</p>
+
+      <h2>哪些是吞嚥困難的警訊？</h2>
+      <ul>
+        <li>進食或喝水時經常嗆咳、清喉嚨。</li>
+        <li>用餐時間變得很長，或食物含在嘴裡不吞。</li>
+        <li>吃完後聲音變得「咕嚕咕嚕」、濕濕的。</li>
+        <li>體重莫名下降、反覆發生肺炎。</li>
+      </ul>
+      <div class="callout">若出現上述情形，建議先請語言治療師或醫師做吞嚥評估，再決定合適的飲食質地——每位長輩的需求不同，不宜自行判斷。</div>
+
+      <h2>食物質地的調整方向</h2>
+      <p>一般而言，吞嚥困難者較難處理「太硬」「太稀」或「兩種質地混在一起」的食物。常見的調整包括：</p>
+      <ul>
+        <li><strong>固體食物：</strong>切碎、剁細，或煮到軟爛、打成泥，視能力選擇。</li>
+        <li><strong>液體：</strong>太稀的水容易嗆到，可使用市售「增稠劑」調整成合適的濃稠度。</li>
+        <li><strong>避免高風險食物：</strong>如有纖維的青菜梗、黏稠的麻糬、易散開的乾飯或堅果等。</li>
+      </ul>
+      <p>國際間有一套「吞嚥障礙飲食標準（IDDSI）」，將食物與液體分成不同等級，方便照顧者與專業人員溝通。實際該用哪一級，仍需依專業評估決定。</p>
+
+      <h2>用餐時的安全小提醒</h2>
+      <ul>
+        <li>坐正、身體微前傾，避免躺著或邊走邊吃。</li>
+        <li>一口的量不要太多，吞下去再吃下一口。</li>
+        <li>用餐時減少看電視、聊天等分心情境。</li>
+        <li>餐後維持坐姿 20～30 分鐘，再躺下。</li>
+      </ul>
+
+      <div class="callout">「吃得安全」和「吃得有尊嚴」同樣重要。在安全前提下，盡量保留長輩喜歡的口味與用餐的愉快感受。</div>
+
+      <div class="refs">
+        <h2>參考資料與延伸閱讀</h2>
+        <ul>
+          <li>台灣聽力語言學會 — <a href="https://www.slh.org.tw/" target="_blank" rel="noopener">slh.org.tw</a></li>
+          <li>中華民國語言治療師公會全國聯合會 — <a href="https://www.taiwanslpu.org.tw/" target="_blank" rel="noopener">taiwanslpu.org.tw</a></li>
+        </ul>
+        <p class="note">食物質地與增稠程度需依個別吞嚥評估結果調整，本文僅供一般參考，請勿自行取代專業建議。</p>
+      </div>
+    `
+  },
+  {
+    cat:"family", icon:"📋", color:"#eafaf0", tag:"家長實務",
+    title:"特殊兒家長的實務問題：補助申請、療育銜接與上學準備",
+    excerpt:"從通報、補助到入學，整理特殊兒家長最常遇到的行政與銜接問題。",
+    html:`
+      <span class="tag">家長實務</span>
+      <h1>特殊兒家長的實務問題：補助申請、療育銜接與上學準備</h1>
+      <p>除了療育本身，特殊兒的家長往往還要面對一連串<strong>行政與銜接</strong>的問題：要去哪裡通報？有什麼補助？療育和學校怎麼接得上？這篇整理常見的方向，幫助你比較有頭緒。（各縣市規定與額度可能不同，實際請以官方公告為準。）</p>
+
+      <h2>一、通報與評估：從哪裡開始？</h2>
+      <p>若懷疑孩子有發展遲緩，可向各縣市的「早期療育通報轉介中心」通報，或經由醫療院所協助。通報後通常會安排到「兒童發展聯合評估中心」進行較完整的評估，作為後續療育與補助的依據。</p>
+
+      <h2>二、補助與資源：可以申請什麼？</h2>
+      <p>常見的協助方向包括（實際項目、資格與金額依各縣市規定）：</p>
+      <ul>
+        <li><strong>早期療育費用補助：</strong>如療育訓練費、交通費補助等。</li>
+        <li><strong>身心障礙證明相關福利：</strong>經鑑定後可能享有的各項服務與補助。</li>
+        <li><strong>健保與醫療資源：</strong>部分療育可透過醫療體系進行。</li>
+      </ul>
+      <div class="callout">建議直接洽詢戶籍所在地的社會局（處）、早療通報轉介中心，或聯合評估中心的社工，他們能依孩子的狀況提供最即時、正確的資源清單。</div>
+
+      <h2>三、療育銜接：別讓進度斷掉</h2>
+      <p>孩子可能同時接觸醫院療育、機構療育與幼兒園。幾個讓銜接更順的做法：</p>
+      <ul>
+        <li>保留每次評估與療育的紀錄，方便不同單位之間溝通。</li>
+        <li>主動讓老師了解孩子的狀況與需要協助的地方。</li>
+        <li>定期和治療師、老師對齊目標，避免各做各的。</li>
+      </ul>
+
+      <h2>四、上學準備：入學前可以做的事</h2>
+      <ul>
+        <li>了解「學前特殊教育」與「鑑定安置」流程，及早諮詢。</li>
+        <li>入學前與學校溝通，討論可能需要的支持（如個別化教育計畫 IEP）。</li>
+        <li>提前帶孩子熟悉環境、建立作息，降低入學的焦慮。</li>
+      </ul>
+
+      <div class="callout">每個孩子的需求不同，「申請什麼、怎麼銜接」沒有單一標準答案。善用社工與專業團隊，會比自己摸索省力很多。</div>
+
+      <div class="refs">
+        <h2>參考資料與延伸閱讀</h2>
+        <ul>
+          <li>衛生福利部社會及家庭署：發展遲緩兒童通報暨個案管理服務網 — <a href="https://system.sfaa.gov.tw/cecm/resourceView/detail2?qtype1=1&qtype2=4" target="_blank" rel="noopener">通報轉介與早療資源</a></li>
+          <li>衛生福利部：發展遲緩兒童早期療育 — <a href="https://www.mohw.gov.tw/cp-88-238-1.html" target="_blank" rel="noopener">mohw.gov.tw</a></li>
+          <li>教育部全國特殊教育資訊網 — <a href="https://special.moe.gov.tw/" target="_blank" rel="noopener">special.moe.gov.tw</a></li>
+        </ul>
+        <p class="note">各項補助與服務的資格、額度與流程依各縣市規定而異，請以官方最新公告及承辦單位說明為準。</p>
+      </div>
+    `
+  }
+];
+
+const categories = [
+  {key:"child",  icon:"👶", color:"#e6f4f6", name:"兒童語言發展與療育", desc:"評估時機、發展里程碑與在家陪伴"},
+  {key:"adult",  icon:"🧑‍⚕️", color:"#eef0f3", name:"成人與長者復健", desc:"中風、失語與吞嚥相關照顧"},
+  {key:"family", icon:"📋", color:"#eafaf0", name:"家長與照顧者實務", desc:"補助申請、療育銜接與上學準備"}
+];
+
+const groupsWrap = document.getElementById('cardGroups');
+categories.forEach(cat => {
+  const items = articles.map((a,i)=>({a,i})).filter(o=>o.a.cat===cat.key);
+  if(items.length===0) return;
+  const group = document.createElement('div');
+  group.className = 'cat-group';
+  group.innerHTML = `
+    <div class="cat-title">
+      <span class="ic" style="background:${cat.color}">${cat.icon}</span>
+      <div><h3>${cat.name}</h3><span class="desc">${cat.desc}</span></div>
+    </div>`;
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  items.forEach(({a,i}) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.onclick = () => openArticle(i);
+    card.innerHTML = `
+      <div class="thumb" style="background:${a.color}">${a.icon}</div>
+      <div class="body">
+        <span class="tag">${a.tag}</span>
+        <h3>${a.title}</h3>
+        <p>${a.excerpt}</p>
+        <span class="more">閱讀全文 →</span>
+      </div>`;
+    grid.appendChild(card);
+  });
+  group.appendChild(grid);
+  groupsWrap.appendChild(group);
+});
+
+function openArticle(i){
+  document.getElementById('articleBody').innerHTML = articles[i].html;
+  document.getElementById('home').classList.add('hidden');
+  document.getElementById('reader').classList.add('active');
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+function goHome(){
+  document.getElementById('reader').classList.remove('active');
+  document.getElementById('home').classList.remove('hidden');
+  document.getElementById('navLinks').classList.remove('open');
+}
+</script>
+</body>
+</html>
