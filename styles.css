@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@300;400;500;700;900&display=swap');
-
 :root{
   --bg:#f4f5f1;
   --bg2:#ebe8df;
@@ -131,6 +129,20 @@ header.site{
 .topic-link span{color:var(--muted);font-size:.92rem;}
 .mini-note{background:linear-gradient(135deg,#fffaf2,#f1eadf);border-left:4px solid var(--accent);border-radius:var(--radius);padding:18px 20px;color:#675748;margin:26px 0;}
 
+/* Article index */
+.article-index{max-width:1120px;}
+.index-group{margin:42px 0 0;}
+.index-group-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:0 0 16px;border-bottom:1px solid var(--line);padding-bottom:12px;}
+.index-group-head h2{margin:0;font-size:1.42rem;line-height:1.3;color:var(--brand-dark);}
+.index-group-head p{margin:0;color:var(--muted);font-size:.94rem;max-width:560px;}
+.index-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.index-link{display:grid;gap:5px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;color:inherit;box-shadow:var(--shadow-sm);}
+.index-link:hover{text-decoration:none;border-color:rgba(185,111,70,.48);transform:translateY(-2px);}
+.index-link span{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:900;}
+.index-link strong{font-size:1.02rem;line-height:1.42;color:var(--ink);}
+.index-link small{font-size:.86rem;line-height:1.65;color:var(--muted);}
+.index-link.hub{background:linear-gradient(135deg,#f9fbf7,#fff);}
+
 /* Resource cards */
 .res-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 .res-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease;}
@@ -201,6 +213,9 @@ footer a{color:#9fe3d8;}
   .hero-inner{padding-bottom:58px;}
   .directory-hero{grid-template-columns:1fr;}
   .path-grid{grid-template-columns:1fr;}
+  .index-group-head{display:block;}
+  .index-group-head p{margin-top:6px;}
+  .index-list{grid-template-columns:1fr;}
 }
 @media(max-width:600px){
   .wrap{padding:0 24px;}
