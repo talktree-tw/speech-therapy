@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://talktree-tw.github.io/speech-therapy/sitemap.xml
