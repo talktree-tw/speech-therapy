@@ -179,6 +179,11 @@ header.site{
 .download-card .download-btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:999px;padding:10px 20px;font-weight:900;box-shadow:0 12px 24px rgba(185,111,70,.22);}
 .download-card .download-btn:hover{text-decoration:none;background:#c67a4f;}
 .download-card .download-note{font-size:.84rem;color:#8b8176;}
+.checklist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0 10px;}
+.checklist-link{display:grid;gap:2px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:inherit;box-shadow:0 8px 18px rgba(40,49,44,.06);}
+.checklist-link:hover{text-decoration:none;border-color:rgba(185,111,70,.48);}
+.checklist-link strong{font-size:.98rem;color:var(--brand-dark);}
+.checklist-link span{font-size:.82rem;color:var(--muted);}
 .milestone,.info-table{width:100%;border-collapse:separate;border-spacing:0;margin:16px 0;font-size:.95rem;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
 .milestone th,.milestone td,.info-table th,.info-table td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;}
 .milestone tr:last-child td,.info-table tr:last-child td{border-bottom:0;}
@@ -250,4 +255,5 @@ footer a{color:#9fe3d8;}
   .about-card{padding:28px 22px;}
   .article-card{padding:28px 22px;}
   .article-card h1{font-size:1.55rem;}
+  .checklist-grid{grid-template-columns:1fr;}
 }
