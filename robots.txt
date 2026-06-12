@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://slp-speech.github.io/sitemap.xml
+Sitemap: https://talktree-tw.github.io/speech-therapy/sitemap.xml
