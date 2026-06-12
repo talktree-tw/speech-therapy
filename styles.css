@@ -171,6 +171,14 @@ header.site{
 .article-card li{margin-bottom:8px;}
 .article-card strong{color:var(--brand-dark);}
 .callout{background:linear-gradient(135deg,#fff6ea,#fdeedd);border-left:5px solid var(--accent);border-radius:12px;padding:16px 20px;margin:22px 0;color:#6b5234;}
+.download-card{display:grid;gap:12px;background:linear-gradient(135deg,#f9fbf7,#fff7ee);border:1px solid rgba(185,111,70,.36);border-radius:14px;padding:22px 24px;margin:24px 0;box-shadow:var(--shadow-sm);}
+.download-card .download-label{display:inline-block;color:var(--accent);font-weight:900;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;}
+.download-card h3{margin:0;font-size:1.18rem;line-height:1.35;color:var(--brand-dark);}
+.download-card p{margin:0;color:var(--muted);}
+.download-card .download-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:4px;}
+.download-card .download-btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:999px;padding:10px 20px;font-weight:900;box-shadow:0 12px 24px rgba(185,111,70,.22);}
+.download-card .download-btn:hover{text-decoration:none;background:#c67a4f;}
+.download-card .download-note{font-size:.84rem;color:#8b8176;}
 .milestone,.info-table{width:100%;border-collapse:separate;border-spacing:0;margin:16px 0;font-size:.95rem;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
 .milestone th,.milestone td,.info-table th,.info-table td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;}
 .milestone tr:last-child td,.info-table tr:last-child td{border-bottom:0;}
