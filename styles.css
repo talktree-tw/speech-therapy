@@ -179,11 +179,12 @@ header.site{
 .download-card .download-btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:999px;padding:10px 20px;font-weight:900;box-shadow:0 12px 24px rgba(185,111,70,.22);}
 .download-card .download-btn:hover{text-decoration:none;background:#c67a4f;}
 .download-card .download-note{font-size:.84rem;color:#8b8176;}
-.checklist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0 10px;}
-.checklist-link{display:grid;gap:2px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:inherit;box-shadow:0 8px 18px rgba(40,49,44,.06);}
-.checklist-link:hover{text-decoration:none;border-color:rgba(185,111,70,.48);}
-.checklist-link strong{font-size:.98rem;color:var(--brand-dark);}
-.checklist-link span{font-size:.82rem;color:var(--muted);}
+.checklist-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 10px;}
+.checklist-link{display:grid;align-content:center;min-height:104px;gap:4px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 12px;color:inherit;text-align:center;box-shadow:0 8px 18px rgba(40,49,44,.06);transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .16s ease;}
+.checklist-link:hover{text-decoration:none;border-color:rgba(185,111,70,.55);box-shadow:0 12px 24px rgba(40,49,44,.1);transform:translateY(-2px);background:#fffdf8;}
+.checklist-link strong{display:block;font-size:1.12rem;line-height:1.25;color:var(--brand-dark);font-weight:900;}
+.checklist-link span{display:block;font-size:.78rem;line-height:1.45;color:var(--muted);}
+.checklist-link::after{content:"下載 PDF";display:inline-flex;justify-content:center;align-items:center;justify-self:center;margin-top:6px;padding:4px 12px;border-radius:999px;background:var(--accent);color:#fff;font-size:.76rem;font-weight:900;line-height:1.2;}
 .milestone,.info-table{width:100%;border-collapse:separate;border-spacing:0;margin:16px 0;font-size:.95rem;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
 .milestone th,.milestone td,.info-table th,.info-table td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;}
 .milestone tr:last-child td,.info-table tr:last-child td{border-bottom:0;}
