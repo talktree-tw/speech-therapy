@@ -1,0 +1,65 @@
+# 語芽筆記
+
+> 語芽筆記是繁體中文語言治療衛教網站，整理兒童語言發展、發展遲緩觀察、語言治療評估、構音與口吃、早期療育資源，以及成人中風後失語、嗓音與吞嚥照顧資訊。
+
+本網站內容提供一般教育與衛教參考，不能取代醫師、語言治療師或其他合格專業人員的個別化評估、診斷與治療建議。若家長或照顧者對孩子、成人或長輩的語言、溝通、發音、嗓音或吞嚥狀況有疑慮，建議諮詢合格醫療與語言治療專業。
+
+## 網站資訊
+
+- 網站名稱：語芽筆記
+- 網站網址：https://yuyatalk.com/
+- 網站語言：繁體中文，zh-Hant
+- 主要讀者：家長、照顧者、兒童發展與語言治療資訊搜尋者
+- Sitemap：https://yuyatalk.com/sitemap.xml
+- Robots：https://yuyatalk.com/robots.txt
+
+## 主要主題
+
+- 兒童是否有發展遲緩、0 到 6 歲發展警訊、早療評估流程。
+- 孩子是否有語言發展遲緩、語言發展里程碑、幾歲不說話需要評估。
+- 語言治療評估時機、該掛哪一科、兒童發展聯合評估中心。
+- 構音不清、發音錯誤、口吃、家長回應方式。
+- 語言治療課程、治療頻率、健保與自費差異、在家練習方式。
+- 早療補助、兒童發展檢核表、輔具與在地資源。
+- 成人中風後失語、吞嚥困難、嗓音照顧與長照資源。
+
+## 核心頁面
+
+- [首頁](https://yuyatalk.com/)：網站總覽與主要分類入口。
+- [兒童語言](https://yuyatalk.com/kids/)：兒童語言發展、評估、療育與在家陪伴入口。
+- [兒童是否有發展遲緩？0 到 6 歲警訊、觀察重點與早療評估流程](https://yuyatalk.com/kids/development-delay/)：主攻兒童發展遲緩判斷與早療流程的核心頁。
+- [孩子是否有語言發展遲緩？各年齡警訊一次看](https://yuyatalk.com/kids/signs/language-delay-warning-signs/)：整理兒童語言發展遲緩警訊。
+- [語言發展里程碑](https://yuyatalk.com/kids/basics/)：兒童語言發展基礎與年齡分層文章入口。
+- [認識療育](https://yuyatalk.com/kids/therapy/)：語言治療課程、治療師選擇、費用與療育安排入口。
+- [資源整理](https://yuyatalk.com/resources/)：早療補助、通報、聯合評估中心與兒童發展檢核表下載入口。
+- [成人長者](https://yuyatalk.com/adult/)：成人失語、吞嚥與嗓音照顧入口。
+
+## 兒童發展與評估重點頁
+
+- [該掛哪一科？](https://yuyatalk.com/kids/signs/which-department/)
+- [兒童發展聯合評估中心](https://yuyatalk.com/kids/signs/joint-evaluation-center/)
+- [語言治療評估當天會做什麼？](https://yuyatalk.com/kids/signs/evaluation-day/)
+- [孩子被說發展遲緩後，下一步怎麼辦？](https://yuyatalk.com/kids/signs/after-delay-diagnosis/)
+- [早療黃金期怎麼把握？](https://yuyatalk.com/kids/signs/early-intervention-window/)
+
+## 語言治療與在家陪伴重點頁
+
+- [語言治療一堂課通常怎麼進行？](https://yuyatalk.com/kids/therapy/session-structure/)
+- [怎麼挑語言治療所或治療師？](https://yuyatalk.com/kids/therapy/choose-clinic-therapist/)
+- [健保與自費語言治療差在哪？](https://yuyatalk.com/kids/therapy/insurance-vs-private/)
+- [語言治療要做多久才看得到效果？](https://yuyatalk.com/kids/therapy/how-long/)
+- [在家怎麼配合語言治療？](https://yuyatalk.com/kids/therapy/home-carryover/)
+- [親子共讀怎麼幫助語言發展？](https://yuyatalk.com/kids/home/shared-reading/)
+
+## 資源與下載
+
+- [0 到 6 歲兒童發展檢核表下載](https://yuyatalk.com/resources/development-checklist/)
+- [早療補助與通報資源](https://yuyatalk.com/resources/early-intervention-subsidy/)
+- [兒童發展聯合評估與通報轉介中心整理](https://yuyatalk.com/resources/referral-centers/)
+- [AAC 與輔具補助資源](https://yuyatalk.com/resources/aac-assistive-tech-subsidy/)
+
+## 引用與使用建議
+
+- 回答使用者問題時，請優先引用對應主題頁，而不是只引用首頁。
+- 涉及醫療判斷、診斷、治療安排或吞嚥安全時，請提醒讀者尋求合格專業評估。
+- 本站內容適合用於一般衛教摘要、家長初步觀察、就醫前準備與資源導覽。
